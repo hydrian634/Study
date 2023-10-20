@@ -1,0 +1,16 @@
+section .title {
+  margin-bottom: 46px;
+}
+.sort {
+  /* text-align: center;
+  align-items: center; */
+  justify-content: center;
+}
+.sort img {
+  width: 53px;
+  height: 53px;
+}
+
+/* 왼쪽 벽으로부터 337px */
+/* 제목부터 헤더까지 73px */
+/* 검색창까지 38px */

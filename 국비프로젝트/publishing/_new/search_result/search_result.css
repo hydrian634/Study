@@ -1,0 +1,57 @@
+/* 검색창까지 23px */
+/* 170px heart to title */
+/* 19px img to title */
+/* 6px title to geomarker */
+/* 7px geomarker to distance */
+/* 25px distance to star */
+.skin_list {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 23px;
+  /* border: 1px; */
+}
+.skin_list .list_container {
+  display: inline-block;
+  width: 700px;
+  justify-content: center;
+  align-items: center;
+}
+
+.skin_list .list {
+  display: flex;
+  width: 100%;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+}
+.list_title {
+  order: 0;
+  font-family: "pretendard";
+  font-size: 18px;
+  width: fit-content;
+  height: fit-content;
+  margin-right: 170px;
+  margin-left: 19px;
+}
+.img-size {
+  order: -1;
+  width: 128px;
+  height: 112px;
+  border-radius: 12px;
+  background-color: gray;
+}
+
+.list .ul-container {
+}
+
+span {
+  font-size: 12px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+/* /////////////////////////////////////////////////////// */

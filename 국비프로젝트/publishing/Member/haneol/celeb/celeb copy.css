@@ -1,0 +1,92 @@
+/* 기본 스타일 */
+
+.list_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 140px, 140px, 140px;
+  grid-template-rows: 30px, 30px;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+  margin: 10px 10px;
+}
+
+.head h1 {
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2;
+  grid-row: 1;
+}
+.a1 {
+  font-size: 20px;
+}
+
+.head .select {
+  grid-column: 3;
+  grid-row: 2;
+  text-align: center;
+}
+
+.celeb-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.celeb-button a {
+  border: 1px solid blue;
+  border-radius: 10px 10px 0 0;
+  padding: 3px 20px;
+}
+
+.celeb_list {
+  margin-top: 47px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 30px 10px; /* row-gap 및 column-gap를 하나의 속성으로 설정 */
+}
+
+.celeb_list .rest_info {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.celeb_list h1 {
+  font-size: 14px;
+  font-weight: bold;
+  order: 1;
+}
+
+.celeb_list img {
+  width: 168px;
+  height: 150px;
+  order: 0;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 700px) {
+  .list_container .select_container {
+    right: 0; /* 모바일 화면에서 위치 조정을 변경 */
+  }
+
+  .celeb_list {
+    grid-template-columns: 1fr 1fr; /* 모바일 화면에서 2열로 변경 */
+  }
+  .head {
+    width: 100%;
+  }
+}

@@ -1,0 +1,18 @@
+.review-section {
+  align-items: center;
+  justify-content: center;
+}
+
+.review-btn .review-cnt {
+  grid-row: 1;
+}
+
+.review-btn .write-review {
+  content: "후기 쓰기";
+
+  grid-column: 5;
+}
+
+.review-area {
+  justify-content: center;
+}

@@ -1,0 +1,125 @@
+/* 검색창까지 23px */
+/* 170px heart to title */
+/* 19px img to title */
+/* 6px title to geomarker */
+/* 7px geomarker to distance */
+/* 25px distance to star */
+.skin-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 23px;
+  /* border: 1px solid; */
+}
+
+.list {
+  width: 490px;
+  height: 150px;
+  display: grid;
+  grid-template-columns: 1fr 130px 1fr 1fr 1fr;
+  grid-template-rows: 1fr 40px 40px 40px 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.list .list-img {
+  grid-column: 2;
+  grid-row: 2/5;
+}
+
+.list .list-img img {
+  width: 130px;
+  height: 110px;
+}
+
+.list .list-top {
+  display: grid;
+  width: 270px;
+  height: 38px;
+  grid-template-columns: 70px 1fr 30px;
+  grid-column: 4;
+  grid-row: 2;
+}
+.list .list-top .list-title {
+  grid-column: 1;
+}
+.list .list-top .ul {
+  grid-column: 3;
+}
+
+.list .list-mid {
+  width: 270px;
+  height: 30px;
+  display: grid;
+  grid-template-columns: 107px 1fr 130px;
+  grid-column: 4;
+  grid-row: 3;
+}
+
+.list .list-mid .geomarker {
+  grid-column: 1;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+
+.list .list-mid .star {
+  grid-column: 3;
+}
+
+.list .list-bot {
+  width: 270px;
+  height: 30px;
+
+  display: grid;
+  grid-template-columns: 130px 1fr 130px;
+
+  grid-column: 4;
+  grid-row: 4;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.list .list-bot .menu1 {
+  grid-column: 1;
+  border: 1px solid red;
+  width: 117px;
+  height: 25px;
+
+  border-radius: 30px;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+
+  background-color: var(--color-main-1);
+}
+.list .list-bot .menu2 {
+  grid-column: 3;
+  width: 117px;
+  height: 25px;
+  border-radius: 30px;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+
+  background-color: var(--color-main-1);
+}
+
+span {
+  font-size: 12px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+/* /////////////////////////////////////////////////////// */

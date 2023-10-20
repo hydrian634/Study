@@ -1,0 +1,49 @@
+/* 기본 스타일 */
+.skin_div {
+  display: flex;
+  width: 100%;
+  margin-top: 38px;
+  justify-content: center;
+}
+
+.srchbar_div {
+  display: flex;
+  z-index: 10;
+  width: 578px;
+  border: 3px solid #000000;
+  border-radius: 33px;
+  background-color: #fff;
+  justify-content: center; /* 중앙 정렬을 위한 스타일 추가 */
+}
+
+.srchbar_div input:first-child {
+  /* width: 100%; 가로 폭 100%로 변경 */
+  height: 58px;
+  color: #000;
+  z-index: 10;
+  position: relative;
+  padding: 5px 40px;
+  background-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box; /* -webkit-box-sizing 제거 */
+  font-size: 2rem;
+  line-height: 24px;
+  font-weight: bold;
+  outline: 0;
+  border: 0;
+}
+
+.srchbar_div button {
+  position: relative; /* 기존 스타일 수정 */
+  top: 0;
+  right: 0;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 700px) {
+  .skin_div {
+    /* 검색창 */
+    display: none;
+  }
+}

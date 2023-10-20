@@ -1,0 +1,246 @@
+-/* 상단 이미지 및 상호명 */
+.top {
+  display: flex;
+  width: 700px;
+  height: 238px;
+  background: rgba(184, 184, 184, 0.4) url("/css/img/logo61.png") no-repeat;
+  background-size: contain;
+  background-blend-mode: multiply;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.head-container {
+  width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
+}
+.rest_name {
+  order: 1;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.top .back {
+  order: 0;
+  margin-left: 50px;
+}
+
+.top .heart {
+  order: 2;
+  margin-left: 153px;
+}
+/* 가게 정보 */
+
+.info {
+  display: grid;
+  grid-template-columns: 400px 280px;
+  justify-content: center;
+  /* text-align: center; */
+  align-items: center;
+  /* margin-left: 60px; */
+}
+
+.simple-info {
+  display: grid;
+  grid-template-columns: 130px 1fr 90px 1fr;
+  grid-template-rows: 43px 1fr 32px 1fr;
+  width: 400px;
+}
+
+.simple-info .star {
+  grid-row: 1;
+  grid-column: 3;
+}
+.simple-info .a1 {
+  grid-row: 3;
+  grid-column: 1;
+}
+.simple-info .a2 {
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.info-1 .info-1-2 {
+  display: grid;
+  grid-template-rows: 20px 20px 20px 20px 20px;
+  width: 400px;
+}
+.info-1-2 span::before {
+  content: " : ";
+}
+
+.info-1-2 .addr {
+  grid-row: 1;
+}
+.info-1-2 .phone-no {
+  grid-row: 3;
+}
+.info-1-2 .time {
+  grid-row: 5;
+}
+
+.map-layer {
+  background: white url(/img/1-1.png) no-repeat;
+  width: 280px;
+  height: 230px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img {
+  display: grid;
+  width: 700px;
+  height: 200px;
+  grid-template-rows: 20px 180px;
+  /* text-align: center; */
+  align-items: center;
+  justify-content: center;
+  grid-column: 1/2;
+}
+.img p {
+}
+.img .img-contain {
+  /* 메뉴 이미지 횡스크롤 */
+  display: flex;
+  gap: 100px;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.img .img-contain::-webkit-scrollbar {
+  display: none;
+}
+.img img {
+  width: 155px;
+  height: 135px;
+}
+
+.food-img {
+  display: flex;
+
+  width: 700px;
+  height: 200px;
+}
+.review-btn {
+  display: grid;
+  width: 700px;
+  grid-template-columns: 120px 120px 120px 120px 120px;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+.review-btn .write-review {
+  grid-column: 4;
+  content: "후기 쓰기";
+}
+
+.review-btn .more-review {
+  grid-column: 5;
+}
+
+.review-area {
+  display: grid;
+  width: 700px;
+  grid-template-columns: 125px 25px 430px;
+  grid-template-rows: 100px 40px;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* .review-container {
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 2;
+
+  justify-content: center;
+  align-items: center;
+} */
+
+.review-img {
+  border-radius: 12px;
+  grid-row: 1/2;
+}
+
+.review-img img {
+  width: 125px;
+  height: 135px;
+}
+
+.review-box {
+  display: grid;
+  grid-template-rows: 25px 50px 1fr;
+  border-radius: 30px 0 30px 0;
+  background-color: #fffaf5;
+  border: 1px solid blue;
+  width: 430px;
+  height: 100px;
+  grid-column: 3;
+  grid-row: 1;
+  /* margin-left: ; */
+}
+
+.review-box div {
+  text-align: right;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.review-box p {
+  width: 330px;
+  height: 40px;
+
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  /* margin-left: 45px; */
+  margin: auto;
+  line-height: 20px;
+
+  font-size: 13px;
+}
+
+.review-info {
+  display: flex;
+  margin-left: 15px;
+
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.review-info .user-id {
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.review-info .rating {
+  margin-left: 200px;
+}

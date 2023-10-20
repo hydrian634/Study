@@ -1,0 +1,52 @@
+.header {
+  background-color: #000000;
+  color: white;
+  display: flex;
+  padding: 0px 15px;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .content-box {
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  /* flex-grow: ;
+  
+    flex-shrink: ;
+    
+    */
+  align-items: center;
+  /* 중간으로 몰아줌(세로) */
+  justify-content: space-between;
+  /* 넓혀주는 간격 */
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  /* 오브젝트의 가로길이만큼만 적용 */
+  position: absolute;
+  left: 200px;
+}
+
+.main-menu li {
+  margin-left: 50px;
+}
+.main-menu li:first-child {
+  margin-left: 0;
+}
+
+@media (min-width: 700px) {
+  .md\:content-box {
+    width: 1200px;
+  }
+
+  /* .md\:header {
+      height: 80px;
+    } */
+}

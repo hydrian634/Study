@@ -1,0 +1,425 @@
+/* 기본 스타일 */
+.body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.contain {
+  width: 393px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  width: 393px;
+  height: 238px;
+  background: rgba(184, 184, 184, 0.4) url("/css/img/logo61.png") no-repeat;
+  background-size: contain;
+  background-blend-mode: multiply;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+.head-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px; /* 상단 여백 조정 */
+}
+
+.rest_name {
+  width: 100%;
+  order: 1;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.top .back {
+  order: 0;
+  margin: 0; /* 여백 초기화 */
+}
+
+.top .heart {
+  order: 2;
+  margin-left: auto; /* 우측 정렬 */
+  margin-right: 0; /* 여백 초기화 */
+}
+
+/* 가게 정보 */
+.info {
+  display: flex;
+  flex-shrink: 0;
+  flex-basis: 0;
+  box-sizing: border-box;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-contain {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+.simple-info {
+  display: grid;
+  grid-template-columns: 130px 1fr 90px 1fr 1fr;
+  grid-template-rows: 43px 1fr 32px 1fr;
+  width: 100%;
+}
+
+.simple-info .star {
+  grid-row: 1;
+  grid-column: 3;
+}
+.simple-info .a1 {
+  grid-row: 3;
+  grid-column: 1;
+}
+.simple-info .a2 {
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.info-1 .info-1-2 {
+  display: grid;
+  grid-template-rows: 20px 20px 20px 20px 20px;
+  width: 100%;
+}
+
+.info-1-2 span::before {
+  content: " : ";
+}
+
+.info-1-2 .addr {
+  grid-row: 1;
+}
+.info-1-2 .phone-no {
+  grid-row: 3;
+}
+.info-1-2 .time {
+  grid-row: 5;
+}
+
+.map-layer {
+  display: none;
+  background: white url(/img/1-1.png) no-repeat;
+  width: 100%;
+  height: 230px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+.img {
+  display: grid;
+  width: 100%;
+  height: 200px;
+  grid-column: 1/2;
+
+  grid-template-rows: 20px 180px;
+  align-items: center;
+  justify-content: center;
+}
+
+.img p {
+}
+
+.img .img-contain {
+  display: flex;
+  gap: 75px; /* 이미지 간격 조정 */
+  width: 100%;
+  overflow-x: scroll; /* 가로 스크롤로 변경 */
+  overflow-y: hidden;
+}
+
+.img .img-contain::-webkit-scrollbar {
+  display: none;
+}
+
+.img img {
+  width: 85px;
+  height: 75px;
+}
+
+.food-img {
+  display: flex;
+  width: 100%;
+  height: auto; /* 높이 자동 조정 */
+}
+
+.review-btn {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 131px); /* 5개 열로 변경 */
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto; /* 중앙 정렬 */
+}
+
+.review-btn .write-review {
+  grid-column: 2; /* 중앙으로 이동 */
+  content: "후기 쓰기";
+}
+
+.review-btn .more-review {
+  grid-column: 3; /* 중앙으로 이동 */
+}
+
+.review-area {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 70px 25px 298px; /* 3개 열로 변경 */
+  grid-template-rows: 45px 15px;
+  margin: 30px auto; /* 중앙 정렬 */
+}
+
+/* .review-container 스타일 제거 (주석처리) */
+
+.review-img {
+  border-radius: 12px;
+  grid-row: 1/2;
+}
+
+.review-img img {
+  width: 70px;
+  height: 60px;
+}
+
+.review-box {
+  display: grid;
+  grid-template-rows: 25px 50px 1fr;
+  border-radius: 30px 0 30px 0;
+  background-color: #fffaf5;
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 40px;
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.review-box div {
+  text-align: right;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.review-box p {
+  width: 100%;
+  /* height: 45px; */
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  /* margin: auto; */
+  line-height: 20px;
+  font-size: 13px;
+  /* padding-left: 40px; */
+}
+
+.review-info {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  margin: 0 15px;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.review-info .user-id {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.review-info .rating {
+  /* margin-left: auto; */
+}
+@media (min-width: 700px) {
+  /* 기본 스타일 */
+
+  .contain {
+    width: 700px;
+  }
+
+  .top {
+    display: flex;
+    width: 700px;
+    height: 238px;
+    background: rgba(184, 184, 184, 0.4) url("/css/img/logo61.png") no-repeat;
+    background-size: contain;
+    background-blend-mode: multiply;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* 중앙 정렬 */
+  }
+
+  .info-contain {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 400px 260px;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    margin: 0 auto; /* 중앙 정렬 */
+  }
+
+  .simple-info {
+    display: grid;
+    grid-template-columns: 130px 1fr 90px 1fr;
+    grid-template-rows: 43px 1fr 32px 1fr;
+    width: 100%;
+  }
+
+  .map-layer {
+    display: flex;
+    background: white url(/img/1-1.png) no-repeat;
+    width: 100%;
+    height: 230px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto; /* 중앙 정렬 */
+  }
+
+  .img .img-contain {
+    display: flex;
+    gap: 100px; /* 이미지 간격 조정 */
+    width: 160%;
+    overflow-x: scroll; /* 가로 스크롤로 변경 */
+    overflow-y: hidden;
+  }
+
+  .img img {
+    width: 155px;
+    height: 135px;
+  }
+
+  .food-img {
+    display: flex;
+    width: 100%;
+    height: auto; /* 높이 자동 조정 */
+  }
+
+  .review-btn {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 120px); /* 5개 열로 변경 */
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto; /* 중앙 정렬 */
+  }
+
+  .review-btn .write-review {
+    grid-column: 4; /* 중앙으로 이동 */
+    content: "후기 쓰기";
+  }
+
+  .review-btn .more-review {
+    grid-column: 5; /* 중앙으로 이동 */
+  }
+
+  .review-area {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 125px 25px 430px; /* 3개 열로 변경 */
+    grid-template-rows: 100px 40px;
+    margin: 30px auto; /* 중앙 정렬 */
+  }
+
+  /* .review-container 스타일 제거 (주석처리) */
+
+  .review-img {
+    border-radius: 12px;
+    grid-row: 1/2;
+  }
+
+  .review-img img {
+    width: 135px;
+    height: 125px;
+  }
+
+  .review-box {
+    display: grid;
+    grid-template-rows: 25px 50px 1fr;
+    border-radius: 30px 0 30px 0;
+    background-color: #fffaf5;
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 100px;
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .review-box div {
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .review-box p {
+    width: 100%;
+    height: auto; /* 높이 자동 조정 */
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-word;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    margin: auto;
+    line-height: 20px;
+    font-size: 13px;
+    padding-left: 40px;
+  }
+
+  .review-info {
+    display: flex;
+    margin: 0 15px;
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .review-info .user-id {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 5px;
+  }
+
+  .review-info .rating {
+    margin-left: auto;
+  }
+}

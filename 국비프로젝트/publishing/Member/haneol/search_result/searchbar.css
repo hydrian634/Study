@@ -1,0 +1,51 @@
+/* searching */
+.skin_div {
+  display: flex;
+  width: 100%;
+  margin-top: 38px;
+  /* -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(20%); */
+
+  justify-content: center;
+}
+
+.srchbar_div {
+  display: flex;
+  /* position: absolute; */
+  /* top: 200px; */
+  /* left: 300px; */
+  z-index: 10;
+  width: 578px;
+  border: 3px solid #000000;
+  border-radius: 33px;
+  background-color: #fff;
+  /* -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); */
+}
+
+.srchbar_div input:first-child {
+  width: 510px;
+  height: 58px;
+  color: #000;
+
+  z-index: 10;
+  position: relative;
+  padding: 5px 40px;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 2rem;
+  line-height: 24px;
+  font-weight: bold;
+  outline: 0;
+  border: 0;
+}
+.srchbar_div button {
+  position: inherit;
+  top: 12px;
+  right: 20px;
+  padding-top: 5px;
+  cursor: pointer;
+}

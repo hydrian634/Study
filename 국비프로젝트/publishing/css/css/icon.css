@@ -1,0 +1,206 @@
+.icon {
+  display: inline-block;
+  width: var(--icon-size-1);
+  height: var(--icon-size-1);
+  background-size: var(--icon-size-1);
+
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.icon::before {
+  content: "";
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+
+  background-color: black;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: inherit;
+  mask-size: inherit;
+}
+
+.deco {
+  display: inline-flex;
+}
+
+.deco::before {
+  content: "";
+  display: inline-block;
+
+  width: var(--icon-size-1);
+  height: var(--icon-size-1);
+
+  background-color: black;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-size: inherit;
+  mask-size: inherit;
+
+  margin-right: 5px;
+}
+
+.deco-icon-size\:1::before {
+  width: var(--icon-size-1);
+  height: var(--icon-size-1);
+  background-size: var(--icon-size-1);
+}
+
+.deco-icon-size\:2::before {
+  width: var(--icon-size-2);
+  height: var(--icon-size-2);
+  background-size: var(--icon-size-2);
+}
+
+.deco-icon-size\:3::before {
+  width: var(--icon-size-3);
+  height: var(--icon-size-3);
+  background-size: var(--icon-size-3);
+}
+
+.icon-hover:hover::before {
+  background-color: #777777;
+}
+
+.icon-size\:1 {
+  width: var(--icon-size-1);
+  height: var(--icon-size-1);
+  background-size: var(--icon-size-1);
+  -webkit-mask-size: var(--icon-size-1);
+  mask-size: var(--icon-size-1);
+}
+
+.icon-size\:2 {
+  width: var(--icon-size-2);
+  height: var(--icon-size-2);
+  background-size: var(--icon-size-2);
+  -webkit-mask-size: var(--icon-size-2);
+  mask-size: var(--icon-size-2);
+}
+
+.icon-size\:3 {
+  width: var(--icon-size-3);
+  height: var(--icon-size-3);
+
+  -webkit-mask-size: var(--icon-size-3);
+  mask-size: var(--icon-size-3);
+}
+
+.icon-size\:42 {
+  width: var(--icon-size-5-2);
+  height: var(--icon-size-5-2);
+
+  -webkit-mask-size: var(--icon-size-5-2);
+  mask-size: var(--icon-size-5-2);
+}
+
+.icon-size\:54 {
+  width: var(--icon-size-5-3);
+  height: var(--icon-size-5-3);
+
+  -webkit-mask-size: var(--icon-size-5-3);
+  mask-size: var(--icon-size-5-3);
+}
+
+.icon-color\:main-1::before {
+  background-color: var(--color-main-1);
+}
+
+.icon-color\:main-2::before {
+  background-color: var(--color-main-2);
+}
+
+.icon-color\:base-0::before {
+  background-color: var(--color-base-0);
+}
+
+.icon-color\:base-1::before {
+  background-color: var(--color-base-1);
+}
+
+/*_*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**/
+.icon-geomarker::before {
+  -webkit-mask-image: url(/css/img/icon/geomarker.svg);
+  mask-image: url(/css/img/icon/geomarker.svg);
+}
+
+.icon-star::before {
+  -webkit-mask-image: url(/css/img/icon/star.svg);
+  mask-image: url(/css/img/icon/star.svg);
+}
+
+.icon-pencil::before {
+  -webkit-mask-image: url(/css/img/icon/writeReview.svg);
+  mask-image: url(/css/img/icon/writeReview.svg);
+}
+.icon-clock::before {
+  -webkit-mask-image: url(/css/img/icon/clock.svg);
+  mask-image: url(/css/img/icon/clock.svg);
+}
+.icon-dots::before {
+  -webkit-mask-image: url(/css/img/icon/option_3dots.svg);
+  mask-image: url(/css/img/icon/option_3dots.svg);
+}
+.icon-heart::before {
+  -webkit-mask-image: url(/css/img/icon/likes.svg);
+  mask-image: url(/css/img/icon/likes.svg);
+}
+.icon-logo::before {
+  -webkit-mask-image: url(/css/img/icon/logo.svg);
+  mask-image: url(/css/img/icon/logo.svg);
+}
+.icon-search::before {
+  -webkit-mask-image: url(/css/img/icon/search.svg);
+  mask-image: url(/css/img/icon/search.svg);
+}
+.icon-1rank::before {
+  -webkit-mask-image: url(/css/img/icon/rankFirst.svg);
+  mask-image: url(/css/img/icon/search.svg);
+}
+.icon-2rank::before {
+  -webkit-mask-image: url(/css/img/icon/rankSecond.svg);
+  mask-image: url(/css/img/icon/search.svg);
+}
+.icon-3rank::before {
+  -webkit-mask-image: url(/css/img/icon/rankThird.svg);
+  mask-image: url(/css/img/icon/search.svg);
+}
+.icon-back::before {
+  -webkit-mask-image: url(/css/img/icon/back.svg);
+  mask-image: url(/css/img/icon/back.svg);
+}
+/*_*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**/
+
+@media (min-width: 700px) {
+  .md\:icon-size\:1 {
+    width: var(--icon-size-1);
+    height: var(--icon-size-1);
+    background-size: var(--icon-size-1);
+    -webkit-mask-size: var(--icon-size-1);
+    mask-size: var(--icon-size-1);
+  }
+
+  .md\:icon-size\:2 {
+    width: var(--icon-size-2);
+    height: var(--icon-size-2);
+    background-size: var(--icon-size-2);
+    -webkit-mask-size: var(--icon-size-2);
+    mask-size: var(--icon-size-2);
+  }
+
+  .md\:icon-size\:3 {
+    width: var(--icon-size-3);
+    height: var(--icon-size-3);
+    /* background-size: var(--icon-size-3); */
+    /* 아이콘의 색깔을 변경하면서 크기를 변경하려면 마스크의 크기를 바꿔야한다. */
+    -webkit-mask-size: var(--icon-size-3);
+    mask-size: var(--icon-size-3);
+  }
+}

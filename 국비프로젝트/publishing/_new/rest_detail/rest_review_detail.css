@@ -1,0 +1,21 @@
+.content {
+  display: flex;
+  border: 1px solid red;
+}
+img {
+  width: 125px;
+  height: 110px;
+}
+.content .review-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.review-btn .review-cnt {
+  grid-row: 1;
+}
+
+.review-btn .write-review {
+  grid-column: 5;
+  content: "후기 쓰기";
+}
