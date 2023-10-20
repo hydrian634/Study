@@ -22,24 +22,24 @@ private MemberService service;
         return "user/login";
     }
 
-    @PostMapping("login")
-    public String login(String username,
-                        String password,
-                        @RequestParam("return-url") String returnURL,
-                        HttpSession session){
-        System.out.println(service.isValid(username, password));
-        if(service.isValid(username, password)) {
-            session.setAttribute("username", username);
-
-            if(returnURL != null && !returnURL.equals(""))
-                return "redirect:" + returnURL;
-
-            return "redirect:/index";
-        }
-
-        //2개 경로 :
-        //1. 가다가 걸려서 왔으면 인증하고 거기로 다시 returnURL
-        //2. 걸릿 것이 없이 자발적으로 여기를 요청한거라면 member/index
-        return "redirect:./login?error";
-    }
+//    @PostMapping("login")
+//    public String login(String username,
+//                        String password,
+//                        @RequestParam("return-url") String returnURL,
+//                        HttpSession session){
+//        System.out.println(service.isValid(username, password));
+//        if(service.isValid(username, password)) {
+//            session.setAttribute("username", username);
+//
+//            if(returnURL != null && !returnURL.equals(""))
+//                return "redirect:" + returnURL;
+//
+//            return "redirect:/index";
+//        }
+//
+//        //2개 경로 :
+//        //1. 가다가 걸려서 왔으면 인증하고 거기로 다시 returnURL
+//        //2. 걸릿 것이 없이 자발적으로 여기를 요청한거라면 member/index
+//        return "redirect:./login?error";
+//    }
 }
