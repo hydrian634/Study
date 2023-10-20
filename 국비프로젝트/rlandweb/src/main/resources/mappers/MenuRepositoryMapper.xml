@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.rland.web.repository.MenuRepository">
+
+	<select id="findAll" resultType="Menu">
+		select
+		*
+		from menu
+	</select>
+
+	<select id="count" resultType="Integer">
+		select
+		count(id)
+		from menu
+	</select>
+
+	<insert id = "save" parameterType="Menu">
+		insert into menu(kor_name, eng_name, price, img, member_id)
+		values (#{korName}, #{engName}, #{price}, #{img}, #{memberId})
+	</insert>
+	
+<!-- 	<update id = "update" parameterType="Menu">
+		update menu(kor_name, eng_name, price, img, member_id)
+		SET (#{korName}, #{engName}, #{price}, #{img}, {#memberId})
+	</update> -->
+	
+	<delete id = "delete">
+		delete from menu where id = #{id}
+	</delete>
+	
+	<select id="findById" resultType="Menu">
+		select * from menu where id = #{id}
+	</select>
+
+	<select id="findViewAll" resultType="MenuView">
+		select * from menu_view
+		<where>
+			<if test="categoryId != null">category_id=#{categoryId}</if>
+			<if test="query != null">and kor_name like '%${query}%'</if>
+		</where>
+		order by reg_date desc
+		limit ${offset},#{size};
+	</select>
+	<!--		where의 역할을 하면서 필요없는 and연산을 지워줌.-->
+
+	<select id="last" resultType="Menu">
+		select *
+		from menu
+		order by id desc limit 1
+	</select>
+
+	<update id="update" parameterType="Menu">
+		UPDATE `menu`
+		<set>
+		<if test="id != null">`id` = #{id},</if>
+		<if test="korName != null">`kor_name` = #{korName},</if>
+		<if test="engName != null">`eng_name` = #{engName},</if>
+		<if test="price != null">`price` = #{price},</if>
+		<if test="img != null">`img` = #{img},</if>
+		<if test="regDate != null">`reg_date` = #{regDate},</if>
+		<if test="hit != null">`hit` = #{hit},</if>
+		<if test="memberId != null">`member_id` = #{memberId}</if>
+		WHERE `id` = #{id}
+		</set>
+	</update>
+
+	<select id="findCatAll" parameterType="Category">
+		select * from category
+	</select>
+
+</mapper>

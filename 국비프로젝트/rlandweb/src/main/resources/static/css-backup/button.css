@@ -1,0 +1,47 @@
+.btn {
+  border: none;
+  color: var(--color-base-0);
+  padding: 5px 16px;
+}
+
+.btn-main {
+  background-color: var(--color-main-3);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-3);
+  color: var(--color-base-0);
+  font-weight: bold;
+}
+
+.btn-icon {
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.btn-type\:icon {
+  padding: 7px;
+  box-sizing: content-box;
+  border-radius: 50%;
+}
+
+.btn-disable {
+  background-color: var(--color-main-3);
+}
+
+.btn-accent {
+  --radius: 15px;
+  width: calc(var(--radius) * 2);
+  height: 30px;
+  border-radius: 15px;
+  background-color: var(--color-main-1);
+}
+
+.btn-cancel {
+  background-color: var(--color-main-3);
+}
+
+@media (min-width: 700px) {
+  .md\:btn-main {
+    border-radius: 0;
+  }
+}

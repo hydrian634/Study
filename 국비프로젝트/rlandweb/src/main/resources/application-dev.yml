@@ -1,0 +1,26 @@
+#mybatis.configuration.map-underscore-to-camel-case: true
+#  mybatis.mapper-locations=mappers/MenuRepositoryMapper.xml
+#  mybatis.type-aliases-package=kr.co.rland.web.entity
+
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 600MB
+      max-request-size: 600MB
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://db.newlecture.com:3306/rlanddb?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: rland
+    password: 20231110
+
+
+logging :
+  level :
+    kr.co.rland.we  b.repository : trace
+
+server:
+  servlet:
+    session:
+      timeout: 2m
+#      그냥 2 쓰면 2초

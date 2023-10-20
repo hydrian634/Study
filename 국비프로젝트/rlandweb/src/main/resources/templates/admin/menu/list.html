@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{admin/inc/layout.html}"
+>
+<head>
+  <title>메뉴 리스트</title>
+</head>
+
+<body>
+	<main layout:fragment="main">
+		<a class="btn btn-primary" href="/index">홈</a>
+		<a href="/menu/detail">메뉴 상세</a>
+
+		<section class="search-section">
+			<h1>Rland Menu</h1>
+			<nav class="category-search">
+				<h1 class="d:none">카테고리 검색 메뉴 목록</h1>
+				<ul class="category-list">
+					<li><a class="current deco md:deco deco-icon-size:1 icon-filter_list" href="">전체메뉴</a></li>
+					<li><a class="d:none md:d:inline" href="">커피</a></li>
+					<li><a class="d:none md:d:inline" href="">수제청</a></li>
+					<li><a class="d:none md:d:inline" href="">샌드위치</a></li>
+					<li><a class="d:none md:d:inline" href="">쿠키</a></li>
+				</ul>
+			</nav>
+			<section>
+				<h1 class="d:none">이름 검색 폼</h1>
+				<form>
+					<fieldset>
+						<legend class="d:none">이름 검색</legend>
+						<input type="text">
+						<input class="icon icon-size:3 icon-color:main icon-search" type="submit" value="검색">
+					</fieldset>
+				</form>
+			</section>
+		</section>
+
+		<section class="menu-card">
+			<h1><a class="heading-3" href="detail?id=1">카페라떼</a></h1>
+			<h2 class="heading-2 font-weight:normal color:base-5">Cafe Latte</h2>
+			<div class="price-block">4,500원<span>SOLD OUT</span></div>
+			<div class="img-block">
+				<a href=""><img src="/image/menu/8.jpg"></a>
+			</div>
+			<div class="like-block d:flex">
+				<a class="icon icon-heart" href="">좋아요</a><span class="font-weight:bold">2</span>
+			</div>
+			<div class="pay-block d:flex">
+				<a class="icon icon-cart" href="">장바구니</a>
+				<a class="icon icon-cart" href="">결제하기</a>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

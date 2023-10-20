@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{inc/layout.html}"
+>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>메뉴 상세 목록</title>
+</head>
+<body>
+	<main layout:fragment="main"
+		  th:with="qt = (${#numbers.formatInteger(param.inc,1)}?:0)+(${#numbers.formatInteger(param.qt,1)}?:1)"
+	>
+		<div>
+			<div>size: <span th:text="${param.size}"></span></div>
+			<div>temp: <span th:text="${param.temp}"></span></div>
+			<div>size1: <span th:text="${#numbers.formatInteger(param.size,1)}==1"></span></div>
+			<div>size2: <span th:text="${#numbers.formatInteger(param.size,1)}==2"></span></div>
+			<div>temp1: <span th:text="${#numbers.formatInteger(param.temp,1)}==1"></span></div>
+			<div>temp2: <span th:text="${#numbers.formatInteger(param.temp,1)}==2"></span></div>
+			<div>param.qt: <span th:text="${#numbers.formatInteger(qt * 4500, 3, 'COMMA')}"></span>원</div>
+		</div>
+		<section th:object="${menu}" >
+			<h1 th:text="*{korName}">카페라떼</h1>
+			<h2 th:text="*{engName}">Caffe Latte</h2>
+			<div>
+			<a src="/image/menu/8.jpg" th:src="@{/image/menu/product/{img} (img=*{img})}"></a>
+			</div>
+			<p>설명글</p>
+			<form>
+				<fieldset>
+					<legend>사이즈</legend>
+<!--					<label><input type="radio" name="size" value="1" checked="${param.size==1}">Small</label>-->
+					<label><input type="radio" name="size" value="1" th:checked="${#numbers.formatInteger(param.size,1)}==1 or ${param.size}==null">Small</label>
+					<label><input type="radio" name="size" value="2" th:checked="${#numbers.formatInteger(param.size,1)}==2">Large</label>
+				</fieldset>
+				<fieldset>
+					<legend>온도</legend>
+					<label><input type="radio" name="temp" value="1" th:checked="${#numbers.formatInteger(param.temp,1)}==1 ">HOT</label>
+					<label><input type="radio" name="temp" value="2" th:checked="${#numbers.formatInteger(param.temp,1)}==2 or ${param.temp}==null">ICED</label>
+				</fieldset>
+				<fieldset
+					th:with="qt = (${#numbers.formatInteger(param.inc,1)}?:0)+(${#numbers.formatInteger(param.qt,1)}?:1)"
+				>
+					<legend>수량</legend>
+					<input class="icon icon-minus" type="submit" name="inc" value="-1" th:disabled="${qt==1}">
+					<output th:text="${qt}">1</output>
+					<input type="hidden" name="qt" th:value="${qt}">
+					<input type="submit" name="inc" value="1">
+					<output><span th:text="${#numbers.formatInteger(qt * 4500, 3, 'COMMA')}">4500</span>원</output>
+				</fieldset>
+				<div>
+					<input type="submit" name="cmd" value="담기">
+					<input type="submit" name="cmd" value="주문하기">
+				</div>
+			</form>
+		</section>
+	</main>
+</body>
+</html>

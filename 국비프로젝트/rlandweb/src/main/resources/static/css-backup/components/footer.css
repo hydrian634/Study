@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  color: var(--color-base-0);
+  background-color: var(--color-base-7);
+  padding: var(--gap-5);
+  margin-top: auto;
+}
+
+.footer dl {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px 5px;
+}
+
+.footer dt::after {
+  content: ":";
+}
+
+.footer dt {
+  justify-self: right;
+}
+
+.footer dt,
+.footer dd {
+  display: inline-block;
+}
