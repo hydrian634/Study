@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{inc/layout.html}">
+	
+<head>
+
+    <title>Document</title>
+
+<!--    <link href= "/src/main/resources/static/css/components/notice/list.css"rel="stylesheet" type="text/css">
+-->    <link href= "/css/components/notice/list.css"rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<main layout:fragment="main">
+
+		<div class="notice-list" th:each="n: ${list}">
+	        <div class="notice-qty" th:text="${n.noticeId}">20 <span>건</span></div>
+	
+	        <section class="notice-list-box-left" >
+	            <h1 class="d:none">공지사항 목록</h1>
+	            <div class="list-left-side"><span class="notice-number" th:text="${n.noticeId}">20.</span>
+	                <h1>시스템 점검 안내</h1>
+	                <div class="reg-date">2023.08.04</div>
+	            </div>
+	            
+	        </section>
+	            
+	            <span class="gotodetail deco icon-right-arrow icon-size:0"></span> 
+	            <section class="notice-list-box-right"></section>
+	            <div class="list-right-side">
+	                <span class="gotodetail deco icon-right-arrow icon-size:2">화살표</span>
+	            </div>
+
+        </div>
+	</main>
+	
+</body>	
+</html>

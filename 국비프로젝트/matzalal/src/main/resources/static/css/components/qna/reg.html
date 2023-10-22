@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faqReg</title>
+    <!-- <link href="../reset.css" rel="stylesheet" type="text/css"> -->
+    <link href="../root.css" rel="stylesheet" type="text/css">
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link href="../util.css" rel="stylesheet" type="text/css">
+    <link href="/css/util/content.css" rel="stylesheet" type="text/css">
+    <link href="/css/util/form.css" rel="stylesheet" type="text/css">
+    <link href="/css/util/box.css" rel="stylesheet" type="text/css">
+    <link href="/css/util/layout.css" rel="stylesheet" type="text/css">
+    <link href="../icon.css" rel="stylesheet" type="text/css">
+    <link href="../button.css" rel="stylesheet" type="text/css">
+    <link href="header.css" rel="stylesheet" type="text/css">
+    <link href="layout.css" rel="stylesheet" type="text/css">
+    <link href="bottom.css" rel="stylesheet" type="text/css">
+    <link href="faqReg.css" rel="stylesheet" type="text/css">
+</head>
+
+<!-- form, div ----------- block
+label, input, textarea --- inline -->
+
+<body>
+    <main class="faq-reg-main">
+        <section class="faq-reg-section">
+            <h1 class="d:none">문의하기 글 등록 폼</h1>
+
+        <form class="faq-reg-form" action="reg" method="post">
+
+            <div class="title-block">
+                <label class=""><input class="faq-title" type="text" name="title" rows="1"
+                    placeholder="제목: 누룽지 굿즈 만들어주세요." required>
+            </div>
+
+        <div class="contents-block">
+            <div class="content-block">
+                <label class=""><textarea class="faq-content" name="content" rows="13"
+                    placeholder="본문: 안녕하세요. 어플 잘 쓰고 있어요. 누룽지가 너무 귀여워서 그런데.. 누룽지 굿즈 좀 만들어 주세요. 제가 살게요... ㅎㅅㅎ"></textarea></label>
+            
+            <div class="img-block">
+                <label class=""><input class="img-content" type="file" name="imageFile"></label>
+            </div>
+
+            <div class="open-option-block">
+                <label><input type="radio" name="open" checked value="1">공개</label>
+                <label><input type="radio" name="open" value="0">비공개</label>
+            </div>
+        </div>
+
+        </div>
+            
+            
+            <!-- type submit 으로 해야 하나..? -->
+            <div class="cancle-save-block">
+                <input class=btn-cancel type="button" name="cmd" value="취소">
+                <input class=btn-save type="button" name="cmd" value="등록">
+            </div>
+            
+            <!-- <div class="faq-reg-btn-block d:flex mt:4-2">
+                <a class="btn btn-register mv:auto md:btn-bigger">등록</a>
+            </div> -->
+            
+        </form>
+
+        
+    </section> 
+
+            <!-- <div class="content-block d:flex">
+                <article class="article-content d:flex md:article-content">
+                    <h1 class="d:none">faq 내용</h1>
+                    <p class="article-content-p md:article-content-p">
+                        23.08.10. 오후 6시~<br><br>
+                        시스템 점검이 있을 예정이오니,
+                        위 내용을 참고하시어 이용에 불편이 없으시길 바랍니다. 고객님의 이해와 배려가 맛잘알 운영에 많은 도움이 됩니다.<br>
+                        감사합니다.
+                    </p>
+                </article>
+            </div> -->
+
+    <!-- --------------------하단 바-------------------------------- -->
+    <nav class="bottom-nav md:d:none">
+        <h1 class="d:none">하단바 내비게이션</h1>
+        <ul class="bottom-ul">
+            <a href="" class="icon icon-home icon-size:5 icon-color:black"> 홈</a>
+            <a href="" class="icon icon-search icon-size:5 icon-color:black"> 검색</a>
+            <a href="" class="icon icon-community icon-size:5 icon-color:black"> 커뮤니티</a>
+            <a href="" class="icon icon-person icon-size:5 icon-color:black"> 마이페이지</a>
+        </ul>
+    </nav>
+
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{inc/layout.html}"
+    >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="/js/user/edit.js"></script>
+    <link href="/css/components/user/edit_user.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <main layout:fragment="main">
+        <section class="user-info-edit">
+            <h1 class="d:none">회원정보변경</h1>
+            <form action="edit" method="post">
+                <fieldset>
+                    <div>
+                        <label class="text">닉네임 변경</label>
+                        <input class="text-box" name="nickname" placeholder="변경하실 닉네임을 입력하세요.(2자~6자)" required>
+                        <input type="submit" class="nickname-check btn btn-check" value="변경">
+                        <p class="d:none">이미 사용중인 닉네임입니다.</p>
+                        <p class="d:none">사용 가능한 닉네임입니다.</p>
+                    </div>
+                    <div>
+                        <label class="text">비밀번호 변경</label>
+                        <input class="text-box" type="password" name="pwd" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                               placeholder="영문, 숫자, 특수문자 중 2개 이상을 입력해주세요." required>
+                        <p class="d:none">영문, 숫자, 특수문자 중 2개 이상을 입력해주세요.</p>
+                        <p class="d:none">사용 가능한 비밀번호입니다.</p>
+                    </div>
+                    <div>
+                        <label class="text">비밀번호 재입력</label>
+                        <input class="text-box" type="password" name="checkpwd" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                               placeholder="비밀번호를 다시 한번 입력해주세요." required>
+                        <input type="submit" class="pwd-check btn btn-check" value="변경">
+                        <p class="d:none">비밀번호가 일치하지 않습니다.</p>
+                        <p class="d:none">일치합니다.</p>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="deluser">
+                <a href="/user/delete">회원탈퇴</a>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

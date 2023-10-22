@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{inc/layout.html}"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="/css/components/user/reg_user.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <main layout:fragment="main">
+        <section class = "user-reg">
+            <h1 class="d:none">회원가입</h1>
+            <form action ="reg" method="post">
+                <fieldset>
+                    <div class="email-box">
+                        <label class="text">이메일</label>
+                        <input type="email" class="text-box" name="email" pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$" placeholder="이메일을 입력하세요." required>
+                        <input type="submit" class="btn btn-check" value="중복확인"></input>
+                        <p class="d:none">이미 가입된 이메일입니다.</p>
+                        <p class="d:none">사용이 가능한 이메일입니다.</p>
+                    </div>
+
+                    <div>
+                        <label class="text" >비밀번호</label>
+                        <input type="password" class="text-box"  name="pwd" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" placeholder="영문, 숫자, 특수기호 조합 8자리 이상" required>
+                        <p class="d:none">영문, 숫자, 특수기호 조합 8자리 이상</p>
+                    </div>
+                    <div>
+                        <label class="text" >비밀번호 확인</label>
+                        <input type="password" class="text-box" name="checkpwd" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" placeholder="다시 한번 비밀번호를 입력하세요." required>
+                    </div>
+                    <div>
+                        <label class="text">이름</label>
+                        <input type="text" class="text-box" name="name" placeholder="이름을 입력하세요." required>
+                    </div>
+                    <div>
+                        <label class="text" >휴대폰번호</label>
+                        <input type="text" class="text-box" name="phone" pattern="^01[016789]-\d{3,4}-\d{4}$" placeholder="휴대폰 번호를 입력하세요." required>
+                    </div>
+                    <div>
+                        <label class="text" >닉네임</label>
+                        <input type="text" class="text-box" name="alias" pattern="[A-Za-z0-9가-힣]+" minlength="2" maxlength="6" placeholder="2~6자 이내의 특수문자를 제외한 닉네임을 입력하세요." required>
+                        <input class="btn btn-check" value="중복확인"></input>
+                        <p class="d:none">이미 사용중인 닉네임입니다.</p>
+                        <p class="d:none">사용이 가능한 닉네임입니다.</p>
+                    </div>
+                    <div>
+                        <label class="text">지역</label>
+                        <select>
+                            <option>은평/서대문구/마포</option>
+                            <option>종로/중구/용산</option>
+                            <option>영등포/구로/금천</option>
+                            <option>동작/관악</option>
+                            <option>강서/양천</option>
+                            <option>도봉/노원/강북/성북</option>
+                            <option>중랑/동대문/성동/광진</option>
+                            <option>강남/서초</option>
+                            <option>강동/송파</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <div >
+                    <input class="btn btn-main btn-reg" type="submit" name="cmd" value="회원가입">
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

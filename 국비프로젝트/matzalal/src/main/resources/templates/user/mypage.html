@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{inc/layout.html}"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="/css/components/user/mypage.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <main layout:fragment="main">
+        <section th:object="${userView}" class="mypage" enctype="multipart/form-data">
+            <h1 class="d:none">마이페이지</h1>
+
+            <ul class="myinfo md:myinfo">
+                <li><input type= "file" name = "img-name" class="icon icon-size:6 icon-user-profile"></li>
+                <li><span class="icon icon-size:5 icon-badge1">등급 </span></li>
+                <li><span th:text="${userView.alias}" class="nickname">바지사장</span></li>
+                <li><span th:text="${userView.email}">pantsCEO@matzalal.com</span></li>
+                <li><span>가입일자 : </span><span th:text="${userView.date}">2023.08.30</span></li>
+            </ul>
+
+            <section class="active">
+                <h1>활동내역</h1>
+                <ul class="active-list md:active-list">
+                    <li class="active-list-card"><a href="/user/mypost">
+                        <span class="card-label">작성한 글</span>
+                        <span th:text="${userView.postCount}">155</span>
+                    </a>
+                    </li>
+                    <li class="active-list-card"><a href="/user/mycomment">
+                        <span class="card-label">작성한 후기</span>
+                        <span th:text="${userView.commentCount}">55</span>
+                    </a>
+                    </li>
+                    <li class="active-list-card"><a href="/user/myfav">
+                        <span class="card-label">찜한 목록</span>
+                        <span>5</span>
+                    </a>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="list">
+                <section>
+                    <h1 class="list-label">나의 계정 정보</h1>
+                    <ul>
+                        <li class="list-content"><a href="/user/edit">회원정보 수정</a></li>
+                        <li class="list-content"><a href="/user/grade">등급표</a></li>
+                    </ul>
+                </section>
+
+                <section >
+                    <h1 class="list-label">고객센터</h1>
+                    <ul>
+                        <li class="list-content">나의 문의 내역</li>
+                        <li class="list-content">FAQ</li>
+                        <li class="list-content">공지사항</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

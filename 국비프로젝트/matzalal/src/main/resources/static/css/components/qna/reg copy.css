@@ -1,0 +1,299 @@
+/* ============ faq 등록 main ============ */
+.faq-reg-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.faq-reg-form fieldset {
+    border: none;
+}
+
+.faq-reg-form legend {
+    display: none;
+    /* margin-left: -10px;
+    margin-bottom: 10px;
+    font-size: 17px; */
+}
+
+.faq-reg-form label {  
+    display: flex;
+    /* padding: 10px; */
+}
+
+.faq-reg-form {
+    border-bottom: 1px solid var(--color-base-3);
+}
+
+.faq-reg-form input {
+    margin-right: 15px;
+}
+
+
+
+
+
+/* ============ 제목 block ============ */
+.faq-reg-form 
+    .title-block {
+        padding: 0px 10px;
+    }
+
+.faq-reg-form 
+    .title-block 
+        .faq-title {
+            width: 100%;
+            height: 20px;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            font-size: 18px;
+            font-weight: medium;
+}
+
+.faq-reg-form
+    .title-block 
+        .reg-date {
+            width: 100%;
+            height: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: right;
+
+            font-size: 12px;
+            color: #818181;
+            margin-bottom: 5px;
+            /* margin-right: 50px; */
+}
+
+.faq-reg-form 
+    .title-block {
+        border-bottom: 1px solid var(--color-base-3);
+}
+
+
+/* ============ 내용 block ============ */
+
+.faq-reg-form 
+    .content-block 
+        .article-content {
+            width: 100%;
+            height: 360px;
+            display: flex;
+            font-size: 15px;
+
+            line-height: 2;
+
+    /* flex-wrap: wrap;
+        white-space: prev-wrap;
+        word-break: break-all; */
+}
+
+.faq-reg-form 
+    .content-block 
+        .article-content-p {
+            /* width: max-content; */
+            width: 300px;
+            margin: 30px 20px;
+            word-break: break-all;
+            line-height: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ============ 이전글 다음글 block ============ */
+.faq-reg-main 
+.prev-next-block {
+    display: flex;
+    width: 100%;
+
+    display: inline-block;
+    /* margin-left: 15px; */
+    border-top: 1px solid var(--color-base-3);
+    border-bottom: 1px solid var(--color-base-3);
+
+    line-height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-reg-main 
+    .prev-block {
+    height: 30px;
+    border-bottom: 1px solid var(--color-base-3);
+    padding: 10px 15px;
+}
+
+.faq-reg-main 
+    .next-block {
+    height: 30px;
+    padding: 10px 15px;
+}
+
+
+
+/* --- inactive --- html코드 어떻게 짜지??---*/
+.faq-reg-main 
+.prev-title {
+    color: #818181;
+}
+
+/* 
+.next-title {
+    color: #818181;
+} */
+
+
+/* ============ 하단 버튼 block ============ */
+.faq-reg-main 
+    .faq-reg-btn-block {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 35px;
+        margin-bottom: 50px;
+}
+
+.faq-reg-main 
+    .faq-reg-btn-block
+        .btn-register {
+            display: flex;
+            align-items:center;
+            justify-content: center;
+}
+
+
+/* ============ md (700부터~ 적용됨) ============ */
+
+@media (min-width: 700px) {
+    /* .faq-reg { */
+    /* width: 1200px; */
+
+    /* } */
+    /* .faq-reg-main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
+
+
+
+
+
+
+/* ============ 제목 block ============ */
+
+/* ============ 내용 block ============ */
+
+.faq-reg 
+    .content-block     
+        .md\:article-content {
+            height: 455px;
+    }
+.faq-reg 
+    .content-block 
+        .md\:article-content-p {
+            width: 565px;
+}
+    
+
+/* ============ 이전글 다음글 block ============ */
+.faq-reg-main 
+.md\:prev-next-block {
+        width: 605px;
+    }
+.faq-reg-main 
+.md\:prev-block {
+        /* height: 30px; */
+        /* border-bottom: 1px solid var(--color-base-3); */
+        padding: 10px 25px;
+    }
+.faq-reg-main 
+.md\:next-block {
+        height: 30px;
+        padding: 10px 25px;
+    }
+.faq-reg-main     
+.md\:deco::after{
+        margin: 0 30px;
+    }
+
+    
+    
+    /* .md\:backtolist-block {
+        margin-top: 40px;
+    } */
+
+
+/* ============ 하단 내비 ============ */
+
+
+    .md\:bottom-nav {
+        display: none;
+    }
+    
+    /* .md\:faq-reg {
+        display:flex;
+        
+    } */
+
+    /* .md\:content-block 
+    .md\:faq-title {
+        /* width: 100%;  */
+        /* height: 35px;
+        margin-top: 205px; */
+        
+    /* display: flex; */
+    /* align-items: flex-start;
+    justify-content: flex-start; */
+    
+    /* font-size: 18px;
+    font-weight: medium; */
+}
+
+/* .md\:wrapper {
+        max-width: 1024px;
+        width: 90%;
+        margin: 0 auto;
+      } */
+
+
+
+
+
+
+
+
+/* 
+::-webkit-scrollbar {
+    display: none;
+} 
+*/
+
+
+
+
+
+/* 
+::-webkit-scrollbar {
+    display: none;
+} 
+*/
+
+
+
+
+
+

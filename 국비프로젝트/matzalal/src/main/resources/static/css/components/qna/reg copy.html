@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faqReg</title>
+    <!-- <link href="../reset.css" rel="stylesheet" type="text/css"> -->
+    <link href="../root.css" rel="stylesheet" type="text/css">
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link href="../util.css" rel="stylesheet" type="text/css">
+    <link href="/css/util/content.css" rel="stylesheet" type="text/css">
+    <link href="/css/util/form.css" rel="stylesheet" type="text/css">
+    <link href="/css/util/box.css" rel="stylesheet" type="text/css">
+    <link href="/css/util/layout.css" rel="stylesheet" type="text/css">
+    <link href="../icon.css" rel="stylesheet" type="text/css">
+    <link href="../button.css" rel="stylesheet" type="text/css">
+    <link href="header.css" rel="stylesheet" type="text/css">
+    <link href="layout.css" rel="stylesheet" type="text/css">
+    <link href="bottom.css" rel="stylesheet" type="text/css">
+    <link href="faqReg copy.css" rel="stylesheet" type="text/css">
+</head>
+
+<!-- form, fieldset ----------- block
+label, input, textarea --- inline -->
+
+<body>
+    <main class="faq-reg-main">
+        <section class="faq-reg">
+            <h1 class="d:none">문의하기 글 등록 폼</h1>
+        <form class="faq-reg-form" action="reg" method="post">
+
+            <fieldset class="title-block">
+                <legend class="">faq 제목 legend</legend>
+                <label class=""><input type="text" name="title" placeholder="누룽지 굿즈 만들어주세요."></label>
+            </fieldset>
+
+            <!-- <div class="title-block">
+                <span class="faq-title">시스템 점검 안내</span>
+                <span class="reg-date">2023.08.04</span>
+            </div> -->
+
+            <!-- <div>
+                <label class="text">닉네임 변경</label>
+                <input class="text-box" id="nickname" name="nickname" placeholder="변경하실 닉네임을 입력하세요.(2자~6자)" required>
+                <button class="btn btn-check">변경</button>
+                <p class="d:none">이미 사용중인 닉네임입니다.</p>
+                <p class="d:none">사용 가능한 닉네임입니다.</p>
+            </div> -->
+
+            <fieldset class="content-block">
+                <legend class="">faq 본문 legend</legend>
+                <label class=""><textarea name="content" placeholder="안녕하세요. 어플 잘 쓰고 있어요. 누룽지가 너무 귀여워서 그런데.. 누룽지 굿즈 좀 만들어 주세요. 제가 살게요... ㅎㅅㅎ"></textarea></label>
+            </fieldset>
+
+            <fieldset class="img-block">
+                <legend class="">이미지 등록 legend</legend>    
+                <label class=""><input type="file" class="" name="imageFile"></label>
+            </fieldset>
+
+            <fieldset class="open-option-block">
+                <legend>글 공개여부 선택 legend</legend>
+                <label><input type="radio" name="open" checked value="1">icon icon-lock</label>
+                <label><input type="radio" name="open" value="0">icon icon-block</label>
+            </fieldset>
+
+            <!-- <div class="content-block d:flex">
+                <article class="article-content d:flex md:article-content">
+                    <h1 class="d:none">faq 내용</h1>
+                    <p class="article-content-p md:article-content-p">
+                        23.08.10. 오후 6시~<br><br>
+                        시스템 점검이 있을 예정이오니,
+                        위 내용을 참고하시어 이용에 불편이 없으시길 바랍니다. 고객님의 이해와 배려가 맛잘알 운영에 많은 도움이 됩니다.<br>
+                        감사합니다.
+                    </p>
+                </article>
+            </div> -->
+
+            <div class="cancle-save-block">
+                <a href="list">취소</a>
+                <input type="submit" value="등록">
+            </div>
+
+            <!-- <div class="faq-reg-btn-block d:flex mt:4-2">
+                <a class="btn btn-register mv:auto md:btn-bigger">등록</a>
+            </div> -->
+
+        </form>
+    </section> 
+
+
+
+
+
+
+
+    <!-- --------------------하단 바-------------------------------- -->
+    <nav class="bottom-nav md:d:none">
+        <h1 class="d:none">하단바 내비게이션</h1>
+        <ul class="bottom-ul">
+            <a href="" class="icon icon-home icon-size:5 icon-color:black"> 홈</a>
+            <a href="" class="icon icon-search icon-size:5 icon-color:black"> 검색</a>
+            <a href="" class="icon icon-community icon-size:5 icon-color:black"> 커뮤니티</a>
+            <a href="" class="icon icon-person icon-size:5 icon-color:black"> 마이페이지</a>
+        </ul>
+    </nav>
+
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.matzalal.web.repository.UserRepository">
+
+    <select id="findAll" resultType="User">
+        select
+        *
+        from user
+    </select>
+
+    <select id="findUserView" resultType="UserView">
+        select
+        *
+        from user_view
+    </select>
+
+    <select id="findUserViewById" resultType="UserView">
+        select
+        *
+        from user_view
+        where
+        user_id = #{id}
+    </select>
+
+    <insert id="save" parameterType="User">
+        insert into user(email, pwd, alias, phone, name, access_location)
+        values (#{email}, #{pwd}, #{alias}, #{phone}, #{name}, #{locationId})
+    </insert>
+
+    <!--쿼리문 내용 다름-->
+    <select id="findById" resultType="User">
+        select user_id
+        , pwd
+        , alias
+        , email
+        , phone
+        , name
+        , grade_id
+        , profile_img
+        , concat(substring(date_format(created_date, '%Y%m%d%h%m'), 1, 4), '-',
+        substring(date_format(created_date, '%Y%m%d%h%m'), 5, 2), '-',
+        substring(date_format(created_date, '%Y%m%d%h%m'), 7, 2), ' ',
+        substring(date_format(created_date, '%Y%m%d%H%i'), 9, 2), ':',
+        substring(date_format(created_date, '%Y%m%d%H%i'), 11, 2)) as ncreat_date
+        , status_id
+        , access_location
+        from user
+        where user_id=#{id}
+    </select>
+
+    <select id="findByEmail" resultType="User">
+        select * from user where email = #{email}
+    </select>
+
+    <select id="last" resultType="User">
+        SELECT * from user order by user_id desc limit 1
+    </select>
+
+    <select id="findEmail" resultType="int">
+        select count(email) cnt from user where email = #{email}
+    </select>
+
+    <select id="findByName" resultType="User">
+        select * from user where name = #{name}
+    </select>
+
+    <select id="hasIdByAlias" resultType="boolean">
+        select count(email) cnt from user where email = #{nickname}
+    </select>
+
+    <select id="hasIdByName" resultType="boolean">
+        select count(name) cnt from user where name = #{name}
+    </select>
+
+    <select id="hasIdByPhone" resultType="boolean">
+        select count(phone) cnt from user where name = #{phone}
+    </select>
+
+    <select id="findPostById" resultType="PostUserLikeView">
+        select * from post_user_like_view where user_id = #{id}
+    </select>
+
+
+
+    <!--관리자 페이지-->
+    <select id="count" resultType="Integer">
+        select count(user_id) count from user
+    </select>
+
+
+    <update id="modify">
+        UPDATE `user`
+        <set>
+            <if test="pwd != null">`pwd` = #{pwd},</if>
+            <if test="alias != null">`alias` = #{alias},</if>
+            <if test="email != null">`email` = #{email},</if>
+            <if test="phone != null">`phone` = #{phone},</if>
+            <if test="name != null">`name` = #{name},</if>
+            <if test="gradeId != null">`grade_id` = #{gradeId},</if>
+            <if test="profileImg != null">`profile_img` = #{profileImg},</if>
+            <if test="statusId != null">`status_id` = #{statusId}</if>
+        </set>
+        WHERE `user_id` = #{id}
+    </update>
+    
+    <delete id="delete"> <!-- 삭제는 반환값이 필요없음  -->
+  	 	delete from user 
+  		where user_id=#{id}
+  	</delete>
+</mapper>

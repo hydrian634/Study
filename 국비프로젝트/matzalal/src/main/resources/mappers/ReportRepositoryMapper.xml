@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.matzalal.web.repository.ReportRepository">
+	
+	<insert id="save" parameterType="Report">
+  		insert into post_report(content, user_id, post_id, report_reason_id, admin_id)
+		values (#{content}, #{userId}, #{postId}, #{reportReasonId}, #{adminId})
+  	</insert>
+	
+	<select id="last" resultType="Report">
+		SELECT * from post_report order by post_report_id desc limit 1
+	</select>
+	
+	
+</mapper>

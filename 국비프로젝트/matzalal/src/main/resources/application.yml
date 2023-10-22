@@ -1,0 +1,30 @@
+
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 600MB
+      max-request-size: 600MB
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  devtools:
+    remote:
+      restart:
+        enabled: true
+    
+#mybatis.configuration.map-underscore-to-camel-case: true
+#mybatis.mapper-locations=mappers/*Mapper.xml
+#mybatis.type-aliases-package= kr.co.rland.web.entity
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mappers/*Mapper.xml
+  type-aliases-package: com.matzalal.web.entity
+
+server:
+  port: 8000
+  

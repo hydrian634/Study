@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{admin/inc/layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 관리</title>
+    <link href="/css/components/pagination.css" rel="stylesheet" type="text/css">
+    <link href="/css/components/button.css" rel="stylesheet" type="text/css">
+    <link href="/css/components/admin/search.css" rel="stylesheet" type="text/css">
+    <link href="/css/components/admin/dropdown-select.css" rel="stylesheet" type="text/css">
+    <link href="/css/components/admin/main-header.css" rel="stylesheet" type="text/css">
+    <link href="/css/components/admin/user/list.css" rel="stylesheet" type="text/css">
+    <script type = "text/javascript"  src="/js/user/list.js"></script>
+</head>
+<body>
+    <main layout:fragment="main">
+        <section class="main-section md:main-section" name="listSection">
+            <h1 class="main-section-title">회원 관리</h1>
+            <header class="main-section-header">
+                <div class="main-section-count">
+                    <p>총 <span th:text="${count}">00</span>명</p>
+                </div>
+    
+                <!-- 수정, 삭제 버튼 -->
+                <div class="manage-button">
+                    <a class="store-edit-button" href="edit?userId=3" th:href="@{edit(id=${id})}">
+                        <input type="button" value="수정" class="btn-main btn-main-create-edit btn-main-small">
+                    </a>
+                    <a class="store-delete-button">
+                        <input type="button" value="삭제" class="btn-main btn-main-create btn-main-create-delete btn-main-small">
+                    </a>
+                </div>
+
+                <div class="dropdown-select md:dropdown-select">
+                    <!-- 등급 선택창 -->
+                    <form action="" class="grade-select md:grade-select">
+                        <legend for="grade" class="d:none">등급 선택창</legend>
+                            <select id="" name="">
+                                <option value="1">쌀알</option>
+                                <option value="2">쌀밥</option>
+                                <option value="3">볶음밥</option>
+                            </select>
+                    </form>
+                    
+                    <!-- 이메일검색 버튼 -->
+                    <form class="search-form">
+                        <fieldset class="search md:search">
+                            <legend class="d:none">이메일</legend>
+                            <input type="search" placeholder="이메일" size="5">
+                            <button type="submit" class="icon icon-color-black icon-search"></button>
+                        </fieldset>
+                    </form>
+                </div>  
+            </header>
+        
+            <!-- 본문!! -->
+            <!-- 회원 목록 -->
+            <section th:each="u : ${list}" class="user-block md:user-block">
+                <h1 th:text="${u.alias}" class="user-alias-block">회원 닉네임</h1>
+					<div class="checkbox-block">
+                    	<input type="checkbox" name="checkBox" value="${u.id}">
+                    </div>
+                <div th:text="${u.profileImg}" class="user-image-block">
+                    <img src="/css/image/admin-icon/user.svg" class="">
+                </div>
+                
+                <div th:text="${u.email}" class="user-email-block">
+                    <a class="">회원 이메일</a>
+                </div>
+
+                <div th:text="${u.gradeId}" class="user-grade-block">
+                    <a class="">회원 등급</a>
+                </div>
+
+                <div th:text="${u.date}" class="user-reg_date-block">
+                    <a class="">회원 가입일</a>
+                </div>
+                <div>
+					<a href="edit?id=19" th:href="@{edit(id=${u.id})}" name="editBox">수정?</a>
+				</div>
+				<div>
+					<a name="deleteBox" th:value="@{edit(id=${u.id})}">삭제</a>
+				</div>
+            </section> 
+
+            
+ 
+
+            <!-- 페이지 이동 -->
+            <div class="pagination">
+                <a class="" href="">&laquo;</a>
+                <a class="page-active" href="">1</a>
+                <a class="" href="">2</a>
+                <a class="" href="">3</a>
+                <a class="" href="">4</a>
+                <a class="" href="">5</a>
+                <a class="" href="">&raquo;</a>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
