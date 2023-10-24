@@ -18,19 +18,20 @@
 				<h1>오늘의 랭킹</h1>
 				<div class="sort">
 					<div th:each="rc:${recom}">
-						<img src="/css/img/1-1.png">
-						<span>${rest_name}</span>
-						<img src="/css/img/gold.png">
+						<img src="/css/image/ranking1.JPG" th:src="@{/css/image/img (img=${rc.bannerImg})}">
+						<span th:text="${rc.restName}">${rest_name}</span>
+						<img src="/css/image/medal1.png" th:src="@{/css/image/medal} ">
+<!--						여기 반복해서 어떻게 넣지;;;-->
 					</div>
 					<div>
-						<img src="/css/img/1-2.png">
+						<img src="/css/image/1-2.png">
 						<span>${rest_name}</span>
-						<img src="/css/img/silver.png">
+						<img src="/css/image/medal2.png">
 					</div>
 					<div>
-						<img src="/css/img/1-3.png">
+						<img src="/css/image/1-3.png">
 						<span>${rest_name}</span>
-						<img src="/css/img/bronze.png">
+						<img src="/css/image/medal3.png">
 					</div>
 				</div>
 			</section>
@@ -49,7 +50,7 @@
 		<!-- 검색창 -->
 		<div class="skin_div">
 			<div class="srchbar_div">
-				<form action="/test/test.html">
+				<form action="/search/result">
 					<input type="text" placeholder="검색창"
 						   minlength="1">
 					<button type="submit" class="icon icon-hover icon-search"
@@ -66,7 +67,7 @@
 					<div class="container" >
 						<article class="card" th:each="rc:${recom}" th:attr="data-id=${rc.id}">
 							<h1 th:text="${rc.restName}">부부떡볶이</h1>
-							<a href="\"><img src="/css/image/1-1.png" th:src="@{/css/image/{img} (img=${rc.bannerImg})}"></a>
+							<a href="\"><img src="/css/image/ranking1.JPG" th:src="@{/css/image/{img} (img=${rc.bannerImg})}"></a>
 						</article>
 <!--						<article class="card">-->
 <!--							<h1>토속촌</h1>-->
