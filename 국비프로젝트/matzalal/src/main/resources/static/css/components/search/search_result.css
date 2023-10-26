@@ -6,47 +6,63 @@
 /* 25px distance to star */
 .skin_list {
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
   margin-top: 23px;
   /* border: 1px; */
 }
-.skin_list .list_container {
-  display: inline-block;
-  width: 700px;
-  justify-content: center;
-  align-items: center;
-}
 
 .skin_list .list {
-  display: flex;
-  width: 100%;
+  display: grid;
+  width: 700px;
+  grid-template-columns: 30px 130px 10px 120px 120px;
+  grid-template-rows: 40px 40px 40px;
   height: 150px;
   justify-content: center;
   align-items: center;
 }
 .list_title {
-  order: 0;
-  font-family: "pretendard";
-  font-size: 18px;
-  width: fit-content;
-  height: fit-content;
-  margin-right: 170px;
-  margin-left: 19px;
+  grid-column: 4;
+  grid-row: 1;
 }
 .img-size {
-  order: -1;
-  width: 128px;
-  height: 112px;
+  grid-column: 2;
+  grid-row: 1/4;
+  width: 130px;
+  height: 110px;
   border-radius: 12px;
   background-color: gray;
 }
-
-.list .ul-container {
+.list .heart {
+  grid-column: 5;
+  grid-row: 1;
+  text-align: right;
 }
 
-span {
+.list .geomarker {
+  grid-column: 4;
+  grid-row: 2;
+}
+.list .star {
+  grid-column: 5;
+  grid-row: 2;
+}
+.list .menu1 {
+  grid-column: 4;
+  grid-row: 3;
+  font-size: 11px;
+  text-align: center;
+}
+.list .menu2 {
+  grid-column: 5;
+  grid-row: 3;
+  font-size: 11px;
+  text-align: center;
+}
+
+.ul span {
   font-size: 12px;
 }
 

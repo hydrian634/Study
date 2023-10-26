@@ -15,6 +15,14 @@ public class LikeController {
     @Autowired
     private LikeService service;
 
+    @GetMapping("{ids}")
+    public Long[] delete(
+            @PathVariable Long[] ids){
+        System.out.println(ids[0]);
+        return ids;
+        //이거 "" 써야되지 않나요? 아님->왜 아니더라?
+    }
+
     @PostMapping
     public Like reg(@RequestBody Like like){
 
@@ -25,11 +33,11 @@ public class LikeController {
 
     //Delete /api/likes/2/members/1 (${menuId}/members/${memberId})
 
-    @DeleteMapping("{menu-id}/members/{member-id}")   // {}는 경로로 바꿔주는 것.
-    public Boolean delete(@PathVariable("menu-id") Long menuId){
-
-        Long memberId = 1L;
-        boolean result = service.delete(menuId, memberId);
-        return result;
-    }
+//    @DeleteMapping("{menu-id}/members/{member-id}")   // {}는 경로로 바꿔주는 것.
+//    public Boolean delete(@PathVariable("menu-id") Long menuId){
+//
+//        Long memberId = 1L;
+//        boolean result = service.delete(menuId, memberId);
+//        return result;
+//    }
 }

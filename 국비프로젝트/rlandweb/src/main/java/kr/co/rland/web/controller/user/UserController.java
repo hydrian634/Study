@@ -1,6 +1,7 @@
 package kr.co.rland.web.controller.user;
 
 import jakarta.servlet.http.HttpSession;
+import kr.co.rland.web.entity.Member;
 import kr.co.rland.web.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,35 @@ private MemberService service;
         return "user/login";
     }
 
+    @GetMapping("signup")
+    public String Signup(){
+
+
+
+        return "user/signup";
+    }
+
+    @PostMapping("signup")
+    public String signup(
+            String name,
+            String username,
+            String password,
+            String email
+    ){
+        Member member = Member
+                .builder()
+                        .email(email)
+                                .name(name)
+                                        .userName(username)
+                                                .password(password)
+                                                        .build();
+
+        service.reg(member);
+
+
+        //POST는 절대 ?? 하면 안된다. redirect 써줘야한다.
+        return "redirect:./login";
+    }
 //    @PostMapping("login")
 //    public String login(String username,
 //                        String password,
@@ -42,4 +72,5 @@ private MemberService service;
 //        //2. 걸릿 것이 없이 자발적으로 여기를 요청한거라면 member/index
 //        return "redirect:./login?error";
 //    }
+
 }

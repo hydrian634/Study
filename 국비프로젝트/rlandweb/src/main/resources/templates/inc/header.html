@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -24,8 +26,8 @@
         <ul class="d:none md:d:flex">
           <li><a href="" class="icon icon-cart icon-color:base-0">장바구니</a></li>
           <li><a href="" class="icon icon-hover icon-alert icon-color:base-0 icon-count-with">알림<span>2</span></a></li>
-          <li><a href="/user/login" class="icon icon-person icon-color:base-0">로그인</a></li>
-          <li><a href="" class="d:none icon icon-sign-out icon-color:base-0">로그아웃</a></li>
+          <li sec:authorize="isAnonymous()"><a href="/user/login" class="icon icon-person icon-color:base-0">로그인</a></li>
+          <li sec:authorize="isAuthenticated()" ><span sec:authentication="principal.email"></span><a href="/user/logout" class="icon icon-sign-out icon-color:base-0">로그아웃</a></li>
         </ul>
       </nav>
     </div>

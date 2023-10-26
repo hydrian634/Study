@@ -1,0 +1,26 @@
+.rank-body {
+  width: 700px;
+}
+
+.rank-body h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.rest-container {
+  width: 100%;
+}
+
+.rest-container .rest-box {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 70px 40px 100px 50px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.rest-box .rest-img {
+  width: 70px;
+  height: 70px;
+}

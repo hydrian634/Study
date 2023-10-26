@@ -9,4 +9,16 @@
 		where user_name = #{username}
 	</select>
 
+	<insert id="save" parameterType="Member">
+		insert into member(user_name, email, password, name)
+		values (#{username}, #{email},
+		#{password}, #{name})
+	</insert>
+
+	<select id="last" parameterType="Member">
+		select * from member
+		order by id desc limit 1
+	</select>
+
+
 </mapper>

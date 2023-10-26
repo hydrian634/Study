@@ -23,4 +23,13 @@ public class MemberServiceImp implements MemberService {
 
         return true;
     }
+
+    @Override
+    public Member reg(Member member) {
+
+        repository.save(member);
+        Member newOne = repository.last();
+
+        return newOne;
+    }
 }

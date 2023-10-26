@@ -9,46 +9,46 @@
         <link href="../css/css/style.css" rel="stylesheet" type="text/css">
         <link href="../css/css/util.css" rel="stylesheet" type="text/css">
         <link href="../css/css/reset.css" rel="stylesheet" type="text/css">
-
+        <link href="rest_detail.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <!-- 상단 이미지 및 상호명 -->
-        <section>
+        <section class="top">
             <h1 style="display : none;">상단</h1>
-            <div>
-                <a>뒤로가기 아이콘</a>
-                <a>상호명</a>
-                <a>찜 아이콘</a>
+            <div class="head-container">
+                <a class="rest_name">상호명</a>
+                <a class="icon icon-heart heart">찜 아이콘</a>
             </div>
         </section>
         <!-- 가게 정보 -->
-        <section>
+        <section class="info">
             <h1 style="display : none;">가게 정보</h1>
-            <div>
+            <div class="simple-info">
                 <a class="icon icon-geomarker">위치</a>
                 <a class="icon icon-star">별점</a>
                 <div>
-                    <a>성시경's Pick</a>
-                    <a>풍자's Pick</a>
+                    <a class="a1">성시경's Pick</a>
+                    <a class="a2">풍자's Pick</a>
                 </div>
-                <div><p>주소</p></div>
-                <div><p>전화번호</p></div>
-                <div><p>영업시간</p></div>
-                <div><p>메뉴</p><img></div>
-                <div><p>사진</p><img></div>
-                <div>지도</div>
+                <div class="addr"><p>주소</p>
+                    <p class="phone-no">전화번호</p>
+                    <p class="time">영업시간</p>
+                    <p class="img-contain">메뉴</p><img>
+                    <p class="img-contain">사진</p><img></div>
+                <div class="map-layer">지도</div>
 
                 <section>
                     <h1 style="display : none;">후기</h1>
-                    <div><p>리뷰 쓰기</p></div>
-                    <div><p>더보기</p></div>
-                    <div>
+                    <div class="review-btn">
+                        <p class="write-review">리뷰 쓰기</p>
+                        <p class="more-review">더보기</p></div>
+                    <div class="review-area">
                         <a>후기</a>
-                        <img>
-                        <a>리뷰 내용</a>
+                        <img class="review-img">
+                        <a c;ass="revie-box">리뷰 내용</a>
                         <a>등급 아이콘</a>
-                        <a>ID</a>
-                        <a>평점</a>
+                        <a class="user-id">ID</a>
+                        <a class="rating">평점</a>
                     </div>
                 </section>
             </div>

@@ -1,0 +1,12 @@
+<body>
+    <img id="boy" class="d-none" src="image/boy.png">
+    <img id="girl" class="d-none" src="image/girl.png">
+    <img id="subboy1" class="d-none" src="image/subboy1.png">
+    <img id="map" class="d-none" src="image/map.png">
+    <!-- <input tabindex="2"> // tap 테스트
+    <input tabindex="5"> -->
+    <canvas id="canvas" tabindex="0"
+    width = "900" height = "700"></canvas> 
+    <!-- <input tabindex="3">
+    <input tabindex="4"> -->
+</body>

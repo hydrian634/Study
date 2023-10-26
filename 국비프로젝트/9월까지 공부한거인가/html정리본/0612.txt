@@ -1,0 +1,5 @@
+빅 엔디안 방식은 낮은 주소에 데이터의 높은 바이트(MSB : Most Significant Byte)부터 저장하는 방식이다.
+
+리틀 엔디안 방식은 낮은 주소에 데이터의 낮은 바이트(LSB : Least Significant Byte)를 저장하는 방식이다.
+(https://code-lab1.tistory.com/179)
+

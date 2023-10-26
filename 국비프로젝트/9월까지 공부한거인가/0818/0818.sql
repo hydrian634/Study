@@ -1,0 +1,80 @@
+SELECT * FROM --ROWNUM 선택해 2페이지 출력
+(
+SELECT ROWNUM RNUM, P.* FROM
+(
+SELECT N.ID, N.TITLE, N.REG_MEMBER_ID, M.NAME REG_MEMBER_NAME , COUNT(C.ID) CNT_CONTENT
+FROM NOTICE N 
+LEFT OUTER JOIN MEMBER M
+ON N.REG_MEMBER_ID = M.ID
+LEFT OUTER JOIN "COMMENT" C
+ON C.NOTICE_ID = N.ID
+GROUP BY N.ID, N.TITLE, N.REG_MEMBER_ID, M.NAME
+) P )
+WHERE RNUM BETWEEN 11 AND 20
+;
+-------------------------------------------------------------------------------------
+SELECT * FROM( --틀린 SQL
+SELECT ROWNUM RNUM, N.ID, N.TITLE, N.REG_MEMBER_ID, M.NAME REG_MEMBER_NAME , COUNT(C.ID) CNT_CONTENT
+FROM NOTICE N 
+LEFT OUTER JOIN MEMBER M
+ON N.REG_MEMBER_ID = M.ID
+LEFT OUTER JOIN "COMMENT" C
+ON C.NOTICE_ID = N.ID
+GROUP BY ROWNUM, N.ID, N.TITLE, N.REG_MEMBER_ID, M.NAME) --ROWNUM은 UNIQUE라 GROUP BY가 의미가 없음.
+WHERE RNUM BETWEEN 11 AND 20
+;
+-------------------------------------------------------------------------------------
+
+SELECT * FROM --원본
+(
+SELECT N.ID, N.TITLE, N.REG_MEMBER_ID, N.REG_DATE, M.NAME REG_MEMBER_NAME, COUNT(C.ID) CMT_COUT
+FROM NOTICE N
+LEFT JOIN MEMBER M ON N.REG_MEMBER_ID = M.ID
+LEFT JOIN "COMMENT" C ON C.NOTICE_ID = N.ID
+GROUP BY N.ID, N.TITLE, N.REG_MEMBER_ID, N.REG_DATE, M.NAME
+);
+-------------------------------------------------------------------------------------
+--서브쿼리
+SELECT N.ID, N.TITLE, N.REG_MEMBER_ID, M.NAME REG_MEMBER_NAME , COUNT(C.ID) CNT_CONTENT
+FROM NOTICE N 
+LEFT OUTER JOIN MEMBER M
+ON N.REG_MEMBER_ID = M.ID
+LEFT OUTER JOIN "COMMENT" C
+ON C.NOTICE_ID = N.ID
+GROUP BY N.ID, N.TITLE, N.REG_MEMBER_ID, M.NAME;
+-------------------------------------------------------------------------------------
+SELECT * FROM --최근 날짜순 정렬 2페이지 출력
+(
+SELECT ROWNUM RNUM, P.* FROM
+(
+SELECT N.ID, N.TITLE, N.REG_MEMBER_ID, N.REG_DATE, M.NAME REG_MEMBER_NAME , COUNT(C.ID) CNT_CONTENT
+FROM NOTICE N 
+LEFT OUTER JOIN MEMBER M
+ON N.REG_MEMBER_ID = M.ID
+LEFT OUTER JOIN "COMMENT" C
+ON C.NOTICE_ID = N.ID
+GROUP BY N.ID, N.TITLE, N.REG_MEMBER_ID, N.REG_DATE, M.NAME
+ORDER BY N.REG_DATE DESC
+) P
+)
+WHERE RNUM BETWEEN 11 AND 20
+;
+-------------------------------------------------------------------------------------
+--VIEW 생성
+CREATE VIEW NOTICE_VIEW
+AS
+SELECT N.ID, N.TITLE, N.REG_MEMBER_ID, M.NAME REG_MEMBER_NAME , COUNT(C.ID) CNT_CONTENT
+FROM NOTICE N 
+LEFT OUTER JOIN MEMBER M
+ON N.REG_MEMBER_ID = M.ID
+LEFT OUTER JOIN "COMMENT" C
+ON C.NOTICE_ID = N.ID
+GROUP BY N.ID, N.TITLE, N.REG_MEMBER_ID, M.NAME;
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+--SET SERVEROUTPUT ON;
+-------------------------------------------------------------------------------------
+
+

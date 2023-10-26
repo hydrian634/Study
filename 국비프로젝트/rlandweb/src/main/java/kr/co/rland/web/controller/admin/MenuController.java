@@ -1,13 +1,18 @@
 package kr.co.rland.web.controller.admin;
 
+import kr.co.rland.web.config.CorsConfig;
+import kr.co.rland.web.config.auth.RlandUserDetails;
 import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.security.Principal;
 
 
 @Controller("adminMenuController")
@@ -19,8 +24,17 @@ public class MenuController {
 
 //	@ResponseBody
 	@RequestMapping("list")
-	public String list() {
-
+	public String list(/*Principal principal*/
+	Authentication authentication) {
+//		System.out.println(principal.getName());
+		RlandUserDetails userDetails = (RlandUserDetails) SecurityContextHolder
+				.getContext()
+						.getAuthentication()
+								.getPrincipal();
+//		RlandUserDetails userDetails = (RlandUserDetails) authentication.getPrincipal();
+		System.out.println(userDetails.getId());
+		System.out.println(userDetails.getUsername());
+		System.out.println(userDetails.getEmail());
 		return "/admin/menu/list";
 	}
 

@@ -1,0 +1,54 @@
+package com.newlec.jdbc.ex1;
+
+import java.sql.*;
+
+public class Program {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+//library혹은API 등록 : https://needneo.tistory.com/202
+        //file - project structure - modules - dependencies - + - JARs or Directories... - 경로찾아 선택 후 OK
+
+        String url = "jdbc:oracle:thin:@db.newlecture.com:1521/xepdb1";
+        //String url = "jdbc:oracle:thin:@localhost:"
+        //192.168.0.15 = db.newlecture.com
+        //자기 컴퓨터에 자기만의 데이터베이스이면 localhost
+
+        String sql = "SELECT * FROM MEMBER";
+        //select * from member where age < 200
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        Connection con = DriverManager.getConnection(url, "RLAND", "0530");
+
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+//    if (rs.next()) {
+//        do {
+//            String name = rs.getString("name"); //테이블에 있는 자료형과 같은 자료형을 써야함.
+//            //varchar2 = String
+//            System.out.println(name);
+//        }while(rs.next());
+//    }
+
+        while(rs.next()){
+            String name  = rs.getString("name");
+            int age = rs.getInt("age");
+            if(age < 200){
+            System.out.printf("%s, %d", name, age);
+            System.out.println();
+            }
+        }
+
+
+
+//    if (rs.next()) {
+//        String name = rs.getString("name");
+//        System.out.println(name);
+//    }
+
+
+
+            rs.close();
+            st.close();
+            con.close();
+
+    }
+}

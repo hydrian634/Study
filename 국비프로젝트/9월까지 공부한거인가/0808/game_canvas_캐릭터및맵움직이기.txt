@@ -1,0 +1,111 @@
+import Boy from '../item/boy.js';
+import Girl from '../item/girl.js';
+import SubBoy from '../item/subboy.js';
+import Background from '../item/background.js';
+
+
+export default class GameCanvas{
+    #obj
+    #ctx
+    #boy
+    #girl
+    #subboy
+    #background
+    #mapX
+    #mapY
+    
+    constructor(){
+
+        /** @type {HTMLCanvasElement} */
+        this.#obj = document.querySelector("#canvas")
+        this.#obj.focus() // 윈도우 실행되자마자 포커스가 캔버스로 가도록 설정
+        this.#ctx = canvas.getContext("2d")
+
+        // const character = [
+            this.#boy = new Boy(300, 200), // x, y
+            this.#girl = new Girl(400, 200),
+            this.#subboy = new SubBoy(500, 200)
+            this.#background = new Background();
+
+        this.#mapX = 0
+        this.#mapY = 0
+            
+        // ];
+
+        this.#obj.onkeydown = function(e){
+            console.log("key down", e.key, e.code)
+
+            // 플랫폼과의 연결성을 느슨하게 만드는 역할
+            switch(e.key){
+                case "ArrowUp" :
+                    this.#boy.moveTo("up")
+                    break;
+                case "ArrowDown" :
+                    this.#boy.moveTo("down")
+                    break;
+                case "ArrowLeft" :
+                    this.#boy.moveTo("left")
+                    break;
+                case "ArrowRight" :
+                    this.#boy.moveTo("right")
+                    break;
+            }
+        }.bind(this);
+
+        this.#obj.onkeyup = function(e){
+            switch(e.key){
+                case "ArrowUp" :
+                    this.#boy.stop("up")
+                    break;
+                case "ArrowDown" :
+                    this.#boy.stop("down")
+                    break;
+                case "ArrowLeft" :
+                    this.#boy.stop("left")
+                    break;
+                case "ArrowRight" :
+                    this.#boy.stop("right")
+                    break;
+            }
+        }.bind(this);   
+    }
+
+    run(){
+        setInterval(()=>{
+            let speed = this.#boy.speed;
+            this.#boy.update();
+            this.#girl.update();
+            this.#subboy.update();
+
+            // boy.js에서 boy가 캔버스 안에서만 이동할수있도록 세팅
+        if (this.#boy.x == 900-12 && // 캔버스 끝에 도달하면 맵이 움직이도록.
+            this.#mapX > -900 && // 맵을 확대했으므로, 확대된 크기만큼 왼쪽으로 움직여야한다.
+            this.#boy.isWalking){ // 소스의 크기만큼, 맵이동하여 보여줄 수 있으므로 -900까지.
+            this.#mapX -= speed // 오른쪽으로 이동시 맵은 왼쪽에서 그리게하여 움직이는 것처럼
+        }
+        if(this.#boy.x == 0+12 &&
+            this.#mapX < 0 && // 왼쪽방향 지도 소스 없어서 0으로 멈추기
+            this.#boy.isWalking){
+            this.#mapX += speed
+        }    
+        if(this.#boy.y == 700-24 &&
+            this.#mapY > -700 &&
+            this.#boy.isWalking){
+            this.#mapY -= speed
+        }
+        if(this.#boy.y == 0+12 &&
+            this.#mapY < 0 && // 위쪽방향 지도 소스 없어서 0으로 멈추기
+            this.#boy.isWalking){
+            this.#mapY += speed
+        }
+         
+            // this.#ctx.clearRect(0,0,900,700)
+            this.#background.draw(this.#ctx, this.#mapX, this.#mapY)
+            this.#boy.draw(this.#ctx)
+            this.#girl.draw(this.#ctx)
+            this.#subboy.draw(this.#ctx)
+        },17)
+    }
+
+    
+}
